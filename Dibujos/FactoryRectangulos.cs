@@ -1,37 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
-namespace Dibujos
+namespace RectanglesFactoryApp
 {
-    public class FactoryRectangulos
+    public static class RectangleFactory
     {
-        public float X { get; private set; }
-
-        public class Rectangulo
+        public static RectangleShape CreateRectangle(int x, int y, Color color)
         {
-            public int txtX { get; set; }
-            public int txtY { get; set; }
-            public Color Color { get; set; }
-            public Rectangulo(int x, int y, Color color)
-            {
-                txtX = x;
-                txtY = y;
-                Color = color;
-            }
-            public void Dibujar(Graphics g)
-            {
-                using (SolidBrush brush = new SolidBrush(Color))
-                {
-                    g.FillRectangle(brush, X, Y, 50, 50); // Tamaño fijo de 50x50
-                }
-            }
+            return new RectangleShape(x, y, color);
         }
-        
     }
-
-
 }

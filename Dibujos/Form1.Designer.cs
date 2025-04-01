@@ -1,13 +1,9 @@
-﻿using System.ComponentModel;
-
-namespace RectanglesFactoryApp
+﻿namespace RectanglesFactoryApp
 {
     partial class Form1
     {
         private System.ComponentModel.IContainer components = null;
 
-        /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -26,6 +22,7 @@ namespace RectanglesFactoryApp
             this.panel1 = new System.Windows.Forms.Panel();
             this.CajaColor = new System.Windows.Forms.PictureBox();
             this.btnCREATOR = new System.Windows.Forms.Button();
+            this.txtRectangleCount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CajaColor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +70,7 @@ namespace RectanglesFactoryApp
             this.CajaColor.Location = new System.Drawing.Point(53, 96);
             this.CajaColor.Name = "CajaColor";
             this.CajaColor.Size = new System.Drawing.Size(52, 34);
+            this.CajaColor.BackColor = System.Drawing.Color.Black;
             this.CajaColor.TabIndex = 5;
             this.CajaColor.TabStop = false;
             // 
@@ -85,11 +83,18 @@ namespace RectanglesFactoryApp
             this.btnCREATOR.Text = "CREAR";
             this.btnCREATOR.UseVisualStyleBackColor = true;
             // 
+            // txtRectangleCount
+            // 
+            this.txtRectangleCount.Location = new System.Drawing.Point(138, 96);
+            this.txtRectangleCount.Name = "txtRectangleCount";
+            this.txtRectangleCount.ReadOnly = true;
+            this.txtRectangleCount.Size = new System.Drawing.Size(39, 20);
+            this.txtRectangleCount.TabIndex = 7;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtRectangleCount);
             this.Controls.Add(this.btnCREATOR);
             this.Controls.Add(this.CajaColor);
             this.Controls.Add(this.panel1);
@@ -98,11 +103,10 @@ namespace RectanglesFactoryApp
             this.Controls.Add(this.txtY);
             this.Controls.Add(this.txtX);
             this.Name = "Form1";
-            this.Text = " ";
+            this.Text = "Rectangles Factory";
             ((System.ComponentModel.ISupportInitialize)(this.CajaColor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.TextBox txtX;
@@ -112,6 +116,6 @@ namespace RectanglesFactoryApp
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox CajaColor;
         private System.Windows.Forms.Button btnCREATOR;
+        private System.Windows.Forms.TextBox txtRectangleCount;
     }
 }
-
