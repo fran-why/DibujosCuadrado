@@ -1,22 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dibujos
+namespace RectanglesFactoryApp
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        private readonly List<RectangleShape> rectangles = new List<RectangleShape>();
+        private int rectangleCount = 0;
+
+        public MainForm()
         {
             InitializeComponent();
         }
         
+        private void BtnCREATOR_Click(object sender, EventArgs e)
+        {
+            int x = int.Parse(txtX.Text);
+            int y = int.Parse(txtY.Text);
+            Color color = CajaColor.BackColor;
+
+            RectangleShape rectangle = RectangleFactory.CreateRectangle(x, y, color);
+            rectangles.Add(rectangle);
+            rectangleCount++;
+            txtRectangleCount.Text = rectangleCount.ToString();
+            this.Invalidate();
     }
 
 }
